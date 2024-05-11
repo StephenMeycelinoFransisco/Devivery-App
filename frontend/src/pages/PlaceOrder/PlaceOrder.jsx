@@ -39,7 +39,7 @@ const PlaceOrder = () => {
     let orderData = {
       address: data,
       items: orderItems,
-      amount: getTotalCartAmount() + 2,
+      amount: getTotalCartAmount() + 2000,
     };
     let response = await axios.post(url + "/api/order/place", orderData, {
       headers: { token },
@@ -152,18 +152,19 @@ const PlaceOrder = () => {
             <div>
               <div className="cart-total-details">
                 <p>Subtotal</p>
-                <p>${getTotalCartAmount()}</p>
+                <p>Rp.{getTotalCartAmount()}</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <p>Devivery Fee</p>
-                <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+                <p>Rp.{getTotalCartAmount() === 0 ? 0 : 2000}</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
                 <b>
-                  ${getTotalCartAmount === 0 ? 0 : getTotalCartAmount() + 2}
+                  Rp.
+                  {getTotalCartAmount === 0 ? 0 : getTotalCartAmount() + 2000}
                 </b>
               </div>
             </div>
